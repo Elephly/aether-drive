@@ -1,2 +1,2 @@
 # aether-drive
-Cloud storage synchronization that remains weightless on the client machine.
+Cloud storage synchronization that maintains a weightless client-side.

@@ -1,0 +1,24 @@
+{
+  "name": "aether-drive",
+  "version": "0.1.0",
+  "description": "Cloud storage synchronization that maintains a weightless client-side.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node test/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elephly/aether-drive.git"
+  },
+  "keywords": [
+    "cloud",
+    "drive"
+  ],
+  "author": "nicholaschiasson@namnamnamnam.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Elephly/aether-drive/issues"
+  },
+  "homepage": "https://github.com/Elephly/aether-drive#readme"
+}
