@@ -4,8 +4,10 @@
   "description": "Cloud storage synchronization that maintains a weightless client-side.",
   "main": "src/main.js",
   "scripts": {
-    "start": "node src/main.js",
-    "test": "node test/main.js"
+    "aethereal-start": "node aethereal-client/src/main.js",
+    "astral-start": "node astral-server/src/main.js",
+    "aethereal-test": "node aethereal-client/test/main.js",
+    "astral-test": "node astral-server/test/main.js"
   },
   "repository": {
     "type": "git",
