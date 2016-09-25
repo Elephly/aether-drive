@@ -4,10 +4,8 @@
   "description": "Cloud storage synchronization that maintains a weightless client-side.",
   "main": "src/main.js",
   "scripts": {
-    "aethereal-start": "node aethereal-client/src/main.js",
-    "astral-start": "node astral-server/src/main.js",
-    "aethereal-test": "node aethereal-client/test/main.js",
-    "astral-test": "node astral-server/test/main.js"
+    "start": "node src/main.js",
+    "test": "node test/main.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Elephly/aether-drive/issues"
   },
-  "homepage": "https://github.com/Elephly/aether-drive#readme"
+  "homepage": "https://github.com/Elephly/aether-drive#readme",
+  "dependencies": {
+    "google-auth-library": "^0.9.8",
+    "googleapis": "^13.0.0"
+  }
 }
