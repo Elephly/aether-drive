@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Cloud storage synchronization that maintains a weightless client-side.",
   "main": "src/main.js",
+  "directories": {
+    "resources": "resources",
+    "test": "test"
+  },
   "scripts": {
     "start": "node src/main.js",
     "test": "node test/main.js"
@@ -13,7 +17,8 @@
   },
   "keywords": [
     "cloud",
-    "drive"
+    "drive",
+    "synchronization"
   ],
   "author": "nicholaschiasson@namnamnamnam.com",
   "license": "MIT",

@@ -3,11 +3,24 @@
 var fs = require('fs');
 var path = require('path');
 
-var aetherDriveDir = path.join(getUserHome(), "aether-drive");
+var errno = require("./errno");
+var pathUtil = require("./utils/path-util");
+
+var aetherDriveSettingsFile = path.join("resources", "settings.json");
+var aetherDriveSettings = null;
 var fsWatcher = null;
 
-function getUserHome() {
-  return (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE);
+function saveSettings(settings) {
+  var tempSettings = settings || { default: {} };
+  if (!tempSettings.default.aether_drive_root) {
+    tempSettings.default.aether_drive_root = path.join(pathUtil.getUserHome(), "aether-drive");
+  }
+  fs.writeFile(aetherDriveSettingsFile, JSON.stringify(tempSettings), function(err) {
+    if (err) {
+      tempSettings = null;
+    }
+    return tempSettings;
+  });
 }
 
 function initialize() {
@@ -17,6 +30,16 @@ function initialize() {
     }
   });
 }
+
+fs.readFile(aetherDriveSettingsFile, function processSettings(err, data) {
+  aetherDriveSettings = saveSettings(err ? null : JSON.parse(data));
+  if (!aetherDriveSettings) {
+    process.exit(errno.EIO.code);
+  }
+  console.log(aetherDriveSettings);
+});
+
+return;
 
 fs.access(aetherDriveDir, fs.constants.F_OK, (err) => {
   if (err) {
